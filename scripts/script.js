@@ -50,7 +50,8 @@ function Show(){
   let NewLi = "";
   TaskArray.forEach((element,index)=>{
     NewLi +=`<li>${element}<span class="checked" onclick="checker(${index})"><i class="fas fa-check"></i></span><span class ="trash" onclick="Delete(${index})"><i class = "fas fa-trash"></i></span></li>`;
-  });
+  })
   TODO.innerHTML = NewLi;
   INPUT.value = "";
+  
 }

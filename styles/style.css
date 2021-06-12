@@ -13,21 +13,19 @@ body{
   display:flex;
   width:100%;
   height:100vh;
+  padding: 10px;
   justify-content: center;
 }
 .container{
   position: relative;
-  top: 50px;
-  margin:20px;
   padding: 10px;
-  min-height: 500px;
+  max-height: 700px;
   background:#e9e9e9;
   box-shadow: 6px 6px 9px rgba(0,0,0,0.2),-6px -6px 9px  #ffffff;
 }
 header{
   width: 100%;
   padding: 10px;
-  
 }
 header h1{
   color: #2A1CD8;
@@ -40,10 +38,12 @@ header h1{
 
 .inputs{
   display: flex;
-  margin-top: 30px;
-  justify-content: space-between;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
   width: 100%;
-  min-height: 50px;
+  padding: 10px;
 }
 .inputs input{
   outline: none;
@@ -51,11 +51,15 @@ header h1{
   background: #e9e9e9;
   border-radius: 25px;
   text-align: center;
-  width:240px;
+  width:100%;
+  min-height: 50px;
   box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2), inset -3px -3px 3px  #ffffff;
 }
 .inputs button{
-  width: 50px;
+  position: relative;
+  margin-top: 20px;
+  min-height: 30px;
+  width: 60px;
   outline: none;
   border:none;
   border-radius: 10px;
@@ -93,9 +97,9 @@ header h1{
   transform: scale(1);
 }
 .todo_list .checked,.todo_list .trash{
-  position: relative;
+  position: absolute;
   display: flex;
-  height: 100%;
+  height: 40px;
   width: 35px;
   border-radius: 4px;
   background: #e9e9e9;
@@ -106,7 +110,7 @@ header h1{
   transition: 0.3s all ease;
 }
 .checked{
-  left:65px;
+ right: 45px;
 }
 .trash{
   right: 0px;
