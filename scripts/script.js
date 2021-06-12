@@ -4,6 +4,7 @@ created by : A.Veera Teja
 const INPUT = document.querySelector(".inputs input");
 const ADD_BUT = document.querySelector(".inputs button");
 const TODO = document.querySelector(".todo_list");
+Show();
 /* styling add button based on user entry  */
 INPUT.onkeyup = () =>{
   let User_entry = INPUT.value;
@@ -37,8 +38,8 @@ ADD_BUT.onclick = () =>{
   INPUT.value = '';
   //disabling add button
   ADD_BUT.classList.remove("active");
+  Show();
 }
-Show();
 function Show(){
   let Lsd = localStorage.getItem("NewTodo");
   if (Lsd == null){
@@ -49,9 +50,16 @@ function Show(){
   }
   let NewLi = "";
   TaskArray.forEach((element,index)=>{
-    NewLi +=`<li>${element}<span class="checked" onclick="checker(${index})"><i class="fas fa-check"></i></span><span class ="trash" onclick="Delete(${index})"><i class = "fas fa-trash"></i></span></li>`;
+    NewLi +=`<li>${element}<span class="checked" onclick="Checker(${index})"><i class="fas fa-check"></i></span><span class ="trash" onclick="Delete(${index})"><i class = "fas fa-trash"></i></span></li>`;
   })
   TODO.innerHTML = NewLi;
   INPUT.value = "";
-  
+}
+function Delete(index){
+  let animate = document.querySelector(".todo_list li");
+  Lsd = localStorage.getItem("NewTodo");
+  TaskArray = JSON.parse(Lsd);
+  TaskArray.splice(index,1);
+  localStorage.setItem("NewTodo",JSON.stringify(TaskArray));
+  Show();
 }
